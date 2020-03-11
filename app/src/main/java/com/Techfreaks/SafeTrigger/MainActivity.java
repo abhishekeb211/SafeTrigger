@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Switch MasterSwitch = findViewById(R.id.Master_switch);
-        final FloatingActionButton SaveButton = findViewById(R.id.SaveButton);
+
         final CheckBox Contact_B = findViewById(R.id.contact_B);
         final CheckBox Local_B = findViewById(R.id.local_auth_B);
         final CheckBox Local_S = findViewById(R.id.local_auth_S);
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
         MasterSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("MasterSwitchVal",(isChecked?1:0));
-//                edit.apply();
+                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("MasterSwitchVal",(isChecked?1:0));
+                edit.apply();
                 MasterSwitchVal = isChecked;
                 if(MasterSwitchVal) MainScroll.setVisibility(View.VISIBLE);
                 else                MainScroll.setVisibility(View.GONE);
@@ -92,83 +92,61 @@ public class MainActivity extends AppCompatActivity {
         Contact_B.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("Contact_BVal",(isChecked?1:0));
-//                edit.apply();
+                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("Contact_BVal",(isChecked?1:0));
+                edit.apply();
                 Contact_BVal = isChecked;
             }
         });
         Local_B.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("Local_BVal",(isChecked?1:0));
-//                edit.apply();
+                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("Local_BVal",(isChecked?1:0));
+                edit.apply();
                 Local_BVal = isChecked;
             }
         });
         Media_B.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("Media_BVal",(isChecked?1:0));
-//                edit.apply();
+                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("Media_BVal",(isChecked?1:0));
+                edit.apply();
                 Media_BVal = isChecked;
             }
         });
         Contact_S.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("Contact_SVal",(isChecked?1:0));
-//                edit.apply();
+                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("Contact_SVal",(isChecked?1:0));
+                edit.apply();
                 Contact_SVal = isChecked;
             }
         });
         Local_S.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("Local_SVal",(isChecked?1:0));
-//                edit.apply();
+                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("Local_SVal",(isChecked?1:0));
+                edit.apply();
                 Local_SVal = isChecked;
             }
         });
         Media_S.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
-//                SharedPreferences.Editor edit = preferences.edit();
-//                edit.putInt("Media_SVal",(isChecked?1:0));
-//                edit.apply();
-                Media_SVal = isChecked;
-            }
-        });
-
-        SaveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 preferences = getApplicationContext().getSharedPreferences("safeTriggerSettings",MODE_PRIVATE);
                 SharedPreferences.Editor edit = preferences.edit();
-
-                edit.putInt("MasterSwitchVal",(MasterSwitchVal?1:0));
-
-                edit.putInt("Contact_BVal",(Contact_BVal?1:0));
-                edit.putInt("Local_BVal",(Local_BVal?1:0));
-                edit.putInt("Media_BVal",(Media_BVal?1:0));
-
-                edit.putInt("Contact_SVal",(Contact_SVal?1:0));
-                edit.putInt("Local_SVal",(Local_SVal?1:0));
-                edit.putInt("Media_SVal",(Media_SVal?1:0));
-
-
+                edit.putInt("Media_SVal",(isChecked?1:0));
                 edit.apply();
-                Toast.makeText(getApplicationContext(),"Saved all your preferences",Toast.LENGTH_SHORT).show();
+                Media_SVal = isChecked;
             }
         });
 

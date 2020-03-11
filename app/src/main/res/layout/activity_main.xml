@@ -21,7 +21,7 @@
         android:textSize="10pt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"   />
     <ScrollView
         android:id="@+id/MainScroll"
         android:layout_width="match_parent"
@@ -197,21 +197,5 @@
 
     </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/SaveButton"
-        android:layout_width="25pt"
-        android:layout_height="25pt"
-        android:textAlignment="center"
-        android:padding="12pt"
-        android:clickable="true"
-        android:focusable="true"
-        app:srcCompat="@android:drawable/ic_menu_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
-        app:layout_constraintVertical_bias="0.98"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
